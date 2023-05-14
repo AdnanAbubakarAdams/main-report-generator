@@ -5,6 +5,8 @@ const reports = express.Router();
 const {
     getAllReports,
     createReport,
+    deleteReport,
+    updateReport,
     getReport,
 } = require("../queries/reports")
 
@@ -38,4 +40,27 @@ reports.post("/", async (req, res) => {
         res.status(400).json({ error: error });
     }
 });
+
+// DELETE 
+reports.delete("/:id", async (req, res) => {
+    const { id } = req.params;
+    const deletedReport = await deleteReport(id);
+    if (deletedReport.id) {
+        res.status(200).json(deletedReport);
+    } else {
+        res.status(400).json("the said report not found");
+    }
+});
+
+// UPDATE
+reports.put("/:id", async (req, res) => {
+    const { id } = req.params;
+    const updatedReport = await updateReport(req.body, id);
+    if (updatedReport.id) {
+        res.status(200).json(updatedReport);
+    } else {
+        res.status(400).json({ error: "Your report has not been updated sir"});
+    }
+});
+
 module.exports = reports;

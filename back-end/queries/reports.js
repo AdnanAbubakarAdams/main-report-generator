@@ -32,12 +32,41 @@ const createReport = async (report) => {
     } catch (error) {
         return error;
     }
-}
+};
+
+// DELETE A REPORT
+const deleteReport = async (id) => {
+    try {
+        const deletedReport = await db.one(
+            "DELETE FROM reports WHERE id=$1 RETURNING *",
+            id
+        );
+        return deletedReport;
+    } catch (error) {
+        return error;
+    }
+};
+
+// UPDATE A REPORT
+const updateReport = async (report, id) => {
+    const { location, transaction_date, deposit, name } = report;
+    try {
+        const updatedReport = await db.one(
+            "UPDATE reportS SET location=$1, transaction_date=$2, deposit=$3, name=$4 WHERE id=$5 RETURNING *",
+            [location, transaction_date, deposit, name, id]
+        );
+        return updatedReport;
+    } catch (error) {
+        return error;
+    }
+};
+
 
 
 module.exports = {
     getAllReports,
     createReport,
+    deleteReport,
+    updateReport,
     getReport,
-
 };

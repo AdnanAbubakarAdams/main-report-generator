@@ -1,53 +1,27 @@
-// import React from 'react'
+import React from 'react';
+// import { Link } from "react-router-dom";
 
-// // MATERIAL UI
-// import { styled } from '@mui/material/styles';
-// import Table from '@mui/material/Table';
-// import TableBody from '@mui/material/TableBody';
-// import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-// import TableContainer from '@mui/material/TableContainer';
-// import TableHead from '@mui/material/TableHead';
-// import TableRow from '@mui/material/TableRow';
-// import Paper from '@mui/material/Paper';
+const Report = ({ report, id }) => {
+  return (
+    <tr>
+        <td>
+            {report.id}
+        </td>
+        <td>
+            {report.transaction_date}
+        </td>
+        <td>
+            {report.location}
+        </td>
+        <td>
+            {report.deposit}
+        </td>
+        <td>
+            {report.name}
+        </td>
 
-// const StyledTableCell = styled(TableCell)(({ theme }) => ({
-//     [`&.${tableCellClasses.head}`]: {
-//       backgroundColor: theme.palette.common.black,
-//       color: theme.palette.common.white,
-//     },
-//     [`&.${tableCellClasses.body}`]: {
-//       fontSize: 14,
-//     },
-//   }));
-  
-//   const StyledTableRow = styled(TableRow)(({ theme }) => ({
-//     '&:nth-of-type(odd)': {
-//       backgroundColor: theme.palette.action.hover,
-//     },
-//     // hide last border
-//     '&:last-child td, &:last-child th': {
-//       border: 0,
-//     },
-//   }));
+    </tr>
+  )
+}
 
-// const Report = ({ report, index}) => {
-//   return (
-//     <div>
-       
-//             {/* <StyledTableRow key={report.index}>
-//               <StyledTableCell component="th" scope="row">
-//                 {report.index}
-//               </StyledTableCell> */}
-//               <StyledTableCell align="right">{report.transaction_date}</StyledTableCell>
-//               <StyledTableCell align="right">{report.location}</StyledTableCell>
-//               <StyledTableCell align="right">{report.deposit}</StyledTableCell>
-//               <StyledTableCell align="right">{report.name}</StyledTableCell>
-//             {/* </StyledTableRow> */}
-
-       
-//     </div>
-    
-//   )
-// }
-
-// export default Report;
+export default Report

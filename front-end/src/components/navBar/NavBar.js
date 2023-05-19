@@ -17,6 +17,9 @@ const NavBar = () => {
       <h1>
         <Link to="/reports-gen">Pie Chart</Link>
       </h1>
+      <h1>
+        <Link to="/reports/new">NEW DEPOSIT</Link>
+      </h1>
     </nav>
   )
 }

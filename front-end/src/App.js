@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from './components/navBar/NavBar';
 import Home from './pages/Home';
 import NewReport from './components/newReport/NewReport';
+import EditReport from './components/editReport/EditReport';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/reports/new" element={<NewReport />} />
+          <Route path='/reports/:id/edit' element={<EditReport />} />
 
         </Routes>
       </Router>

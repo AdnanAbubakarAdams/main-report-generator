@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 // MATERIAL UI
@@ -10,27 +10,15 @@ import {
     Card,
     CardContent,
 } from "@mui/material";
-  
 
-// CSS
-import "./NewReport.scss";
 
 // API
 const API = process.env.REACT_APP_API_URL;
 
-const NewReport = () => {
+const EditReport = () => {
+    let { id } = useParams();
 
-    const navigate = useNavigate();
-
-    const addNewReport = (newReport) => {
-        axios.post(`${API}/reports`, newReport)
-        .then(() => {
-            navigate(`/reports`)
-        },
-        (error) => console.error(error)
-        )
-        .catch((c) => console.warn("catch", c))
-    }
+    let navigate = useNavigate();
 
     const [report, setReport] = useState({
         location: "",
@@ -39,20 +27,38 @@ const NewReport = () => {
         name: ""
     });
 
+
+    const updateReport = (updatedReport) => {
+        axios.put(`${API}/reports/${id}`, updatedReport)
+        .then(() => {
+            navigate(`/reports/${id}`)
+        },
+        (error) => console.error(error)
+        )
+        .catch((c) => console.warn("catch", c))
+    };
+
     const handleTextChange = (event) => {
         setReport({ ...report, [event.target.id] : event.target.value })
     };
 
+    useEffect(() => {
+        axios.get(`${API}/reports/${id}`)
+        .then((response) => setReport(response.data),
+        (error) => navigate(`/not-found`)
+        )
+    }, [id, navigate]);
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        addNewReport(report);
+        updateReport(report, id)
     };
 
 
   return (
-    // <div className='newReport'>
-        <Grid className='newReport'>
-            <Card className='newReport__Card'>
+    <div className='editReport'>
+        <Grid >
+            <Card className='editReport__Card'>
             <CardContent>
                 <h3>Daily Deposit Report</h3>
                 <form onSubmit={handleSubmit}>
@@ -115,8 +121,9 @@ const NewReport = () => {
             </CardContent>
             </Card>
         </Grid>
-    // </div>
+
+    </div>
   )
 }
 
-export default NewReport;
+export default EditReport;

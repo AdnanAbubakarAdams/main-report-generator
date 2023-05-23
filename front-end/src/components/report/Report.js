@@ -11,7 +11,7 @@ const Report = ({ report, id }) => {
       <td>{report.transaction_date}</td>
       <td>{report.location}</td>
 
-      <Link to={`/reports/${id}`}>
+      <Link to={`/reports/${report.id}/edit`}>
         <td>{report.deposit}</td>
       </Link>
 

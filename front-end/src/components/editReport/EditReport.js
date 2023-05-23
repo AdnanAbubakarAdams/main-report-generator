@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
+//css
+// import "./EditReport.scss";
+
 // MATERIAL UI
 import {
     Grid,
@@ -31,7 +34,7 @@ const EditReport = () => {
     const updateReport = (updatedReport) => {
         axios.put(`${API}/reports/${id}`, updatedReport)
         .then(() => {
-            navigate(`/reports/${id}`)
+            navigate(`/`)
         },
         (error) => console.error(error)
         )
@@ -48,6 +51,19 @@ const EditReport = () => {
         (error) => navigate(`/not-found`)
         )
     }, [id, navigate]);
+
+    const deleteReport = () => {
+        axios
+          .delete(`${API}/reports/${id}`)
+          .then(() => {
+            navigate(`/`);
+          })
+          .catch((c) => console.error("catch", c));
+      };
+    
+      const handleDelete = () => {
+        deleteReport();
+      };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -111,9 +127,14 @@ const EditReport = () => {
                             required
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={6} className='editReport__button'>
                   <Button sx={{background:'#42999b !important'}} className="new-button" type="submit" variant="contained" fullWidth>
                     Submit
+                  </Button>
+                  </Grid>
+                  <Grid item xs={12} sm={6} className='editReport__button'>
+                  <Button onClick={handleDelete} sx={{background:'#42999b !important'}} className="new-button" variant="contained" fullWidth>
+                    Delete
                   </Button>
                 </Grid>
                     </Grid>

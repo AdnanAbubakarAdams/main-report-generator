@@ -128,12 +128,12 @@ const EditReport = () => {
                             />
                         </Grid>
                         <Grid item xs={12} sm={6} className='editReport__button'>
-                  <Button sx={{background:'#42999b !important'}} className="new-button" type="submit" variant="contained" fullWidth>
+                  <Button sx={{background:'rgb(138, 191, 3) !important'}} className="new-button" type="submit" variant="contained" fullWidth>
                     Submit
                   </Button>
                   </Grid>
                   <Grid item xs={12} sm={6} className='editReport__button'>
-                  <Button onClick={handleDelete} sx={{background:'#42999b !important'}} className="new-button" variant="contained" fullWidth>
+                  <Button onClick={handleDelete} sx={{background:'rgb(138, 191, 3) !important'}} className="new-button" variant="contained" fullWidth>
                     Delete
                   </Button>
                 </Grid>

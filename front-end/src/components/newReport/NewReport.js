@@ -106,7 +106,7 @@ const NewReport = () => {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                  <Button sx={{background:'#42999b !important'}} className="new-button" type="submit" variant="contained" fullWidth>
+                  <Button sx={{background:'rgb(138, 191, 3) !important'}} className="new-button" type="submit" variant="contained" fullWidth>
                     Submit
                   </Button>
                 </Grid>

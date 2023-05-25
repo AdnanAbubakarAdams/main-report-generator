@@ -9,7 +9,7 @@ const NavBar = () => {
         <Link to="/">Report Generator</Link>
       </h1>
       <h1>
-        <Link to="/reports-gen">Bar Chart</Link>
+        <Link to="/bar">Bar Chart</Link>
       </h1>
       <h1>
         <Link to="/reports-gen">Line Chart</Link>

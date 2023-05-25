@@ -25,7 +25,7 @@ const NewReport = () => {
     const addNewReport = (newReport) => {
         axios.post(`${API}/reports`, newReport)
         .then(() => {
-            navigate(`/reports`)
+            navigate(`/`)
         },
         (error) => console.error(error)
         )

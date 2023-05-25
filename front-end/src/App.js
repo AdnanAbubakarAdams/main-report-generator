@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import NewReport from './components/newReport/NewReport';
 import EditReport from './components/editReport/EditReport';
 import BarChart from './components/barChart/BarChart';
+import LineChart from './components/lineChart/LineChart';
+import PieChart from './components/pieChart/PieChart';
 // import ReportDetails from './components/reportDetails/ReportDetails';
 
 // API
@@ -30,7 +32,9 @@ function App() {
       labels: reports.map((report) => report.transaction_date),
       datasets: [{
         label: "Accounting Daily Deposit",
-        data: reports.map((report) => report.deposit)
+        data: reports.map((report) => report.deposit), 
+        borderColor: "black",
+        backgroundColor: ["red", "gold", "green"]
       }]
     };
 
@@ -44,6 +48,8 @@ function App() {
           {/* <Route path='/reports/:id' element={<ReportDetails/>} /> */}
           <Route path='/reports/:id/edit' element={<EditReport />} />
           <Route path='/bar' element={<BarChart chartData={chartData} />} />
+          <Route path='/line' element={<LineChart chartData={chartData} />} />
+          <Route path='/pie' element={<PieChart chartData={chartData} />} />
 
         </Routes>
       </Router>

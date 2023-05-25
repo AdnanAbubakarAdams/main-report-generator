@@ -12,10 +12,10 @@ const NavBar = () => {
         <Link to="/bar">Bar Chart</Link>
       </h1>
       <h1>
-        <Link to="/reports-gen">Line Chart</Link>
+        <Link to="/line">Line Chart</Link>
       </h1>
       <h1>
-        <Link to="/reports-gen">Pie Chart</Link>
+        <Link to="/pie">Pie Chart</Link>
       </h1>
       <h1>
         <Link to="/reports/new">NEW DEPOSIT</Link>

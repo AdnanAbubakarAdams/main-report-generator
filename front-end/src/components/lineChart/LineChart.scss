@@ -1,4 +1,25 @@
-// .lineChart {
-//     width: 1000px;
-//     margin: 50px auto;
-//   }
+.lineChart {
+    width: 1200px;
+    margin: 50px auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .lineChart {
+      width: 90%;
+      height: 45%;
+    }
+   }
+  
+   @media screen and (max-width: 468px) {
+    .lineChart {
+      width: 300px;
+      height: 300px;
+    }
+   }
+   
+   @media screen and (max-width: 300px) {
+    .lineChart {
+      width: 90%;
+      height: 90%;
+    }
+   }

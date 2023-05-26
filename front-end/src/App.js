@@ -50,7 +50,6 @@ function App() {
           <Route path='/bar' element={<BarChart chartData={chartData} />} />
           <Route path='/line' element={<LineChart chartData={chartData} />} />
           <Route path='/pie' element={<PieChart chartData={chartData} />} />
-
         </Routes>
       </Router>
      

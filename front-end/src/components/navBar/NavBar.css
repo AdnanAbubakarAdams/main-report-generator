@@ -4,11 +4,15 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+/* html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+} */
 li {
   list-style: none;
 }
-
 a {
   text-decoration: none;
   color: rgb(204, 204, 204);
@@ -23,41 +27,34 @@ a {
   background: rgb(138, 191, 3);
   box-shadow: 2px 2px 4px grey;
   margin-bottom: 30px;
-
-  &__brand {
-    text-transform: uppercase;
-  }
-
-  &__menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 3rem;
-  }
-
-  &__toggler {
-    display: none;
-  }
-
-  &__toggler div {
-    width: 2.5rem;
-    height: 0.2rem;
-    margin: 0.4rem;
-    background: rgb(204, 204, 204);
-    transition: 0.3s ease-in;
-  }
+}
+.navBar__brand {
+  text-transform: uppercase;
 }
 
+.navBar__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.navBar__toggler {
+  display: none;
+}
+.navBar__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(204, 204, 204);
+  transition: 0.3s ease-in;
+}
 
 @media screen and (max-width: 768px) {
-  .navBar {
-
-  &__toggler {
+  .navBar__toggler {
     display: block;
     cursor: pointer;
   }
-
-  &__menu {
+  .navBar__menu {
     position: fixed;
     top: 7vh;
     right: 0;
@@ -69,10 +66,9 @@ a {
     transform: translateX(100%);
     transition: 0.5s ease-in;
   }
-
-
+}
 /* Active Class */
-&__active {
+.navBar__active {
   transform: translateX(0%);
 }
 
@@ -87,47 +83,3 @@ a {
 .toggle .line3 {
   transform: rotate(45deg) translate(-4px, -5px);
 }
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .navBar {
-//     background: rgb(138, 191, 3);
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 1em;
-//     box-shadow: 2px 2px 4px grey;
-//     margin-bottom: 1em;
-//   }

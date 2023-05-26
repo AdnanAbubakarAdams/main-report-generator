@@ -73,10 +73,11 @@ const EditReport = () => {
 
   return (
     <div className='editReport'>
+        <h3 className='editReport__heading'>Daily Deposit Report</h3>
         <Grid >
             <Card className='editReport__Card'>
             <CardContent>
-                <h3>Daily Deposit Report</h3>
+                
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
                         <Grid xs={12} sm={6} item>

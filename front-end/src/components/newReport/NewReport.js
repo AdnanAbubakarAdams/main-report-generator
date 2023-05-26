@@ -50,11 +50,12 @@ const NewReport = () => {
 
 
   return (
-    // <div className='newReport'>
+    <div className='newReport'>
         <Grid className='newReport'>
+        <h3>Daily Deposit Report</h3>
             <Card className='newReport__Card'>
             <CardContent>
-                <h3>Daily Deposit Report</h3>
+                
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
                         <Grid xs={12} sm={6} item>
@@ -115,7 +116,7 @@ const NewReport = () => {
             </CardContent>
             </Card>
         </Grid>
-    // </div>
+     </div>
   )
 }
 

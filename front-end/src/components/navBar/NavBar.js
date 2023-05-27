@@ -9,13 +9,18 @@ const NavBar = () => {
 
   const [icon, setIcon] = useState("navBar__toggler");
 
+  // const [click, setClick] = useState(false);
+
+  // const handleClick = () => setClick(!click);
+  // const closeMobileMenu = () => setClick(false);
+
   const navToggle = () => {
     if (active === "navBar__menu") {
       setActive("navBar__menu navBar__active");
     } else setActive("navBar__menu");
 
     // Icon Toggler
-    if (icon === "nav__toggler") {
+    if (icon === "navBar__toggler") {
       setIcon("navBar__toggler toggle");
     } else setIcon("navBar__toggler");
   };
@@ -25,7 +30,7 @@ const NavBar = () => {
       <Link to="/" className="navBar__brand">
         report generator
       </Link>
-      <ul className={active}>
+      <ul className={active} >
         <li className="navBar__item">
           <Link to="/bar" className="navBar__link">
             Bar Chart
@@ -58,21 +63,3 @@ const NavBar = () => {
 
 export default NavBar;
 
-
-{/* <nav className='navBar'>
-      <h1>
-        <Link to="/">Report Generator</Link>
-      </h1>
-      <h1>
-        <Link to="/bar">Bar Chart</Link>
-      </h1>
-      <h1>
-        <Link to="/line">Line Chart</Link>
-      </h1>
-      <h1>
-        <Link to="/pie">Pie Chart</Link>
-      </h1>
-      <h1>
-        <Link to="/reports/new">NEW DEPOSIT</Link>
-      </h1>
-    </nav> */}

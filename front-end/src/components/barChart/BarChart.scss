@@ -1,4 +1,25 @@
-// .barChart {
-    // width: 1300px;
-    // margin: 50px auto;
-  // }
+.barChart {
+    width: 1300px;
+    margin: 50px auto;
+  }
+
+ @media screen and (max-width: 768px) {
+  .barChart {
+    width: 90%;
+    height: 45%;
+  }
+ }
+
+ @media screen and (max-width: 468px) {
+  .barChart {
+    width: 300px;
+    height: 300px;
+  }
+ }
+ 
+ @media screen and (max-width: 300px) {
+  .barChart {
+    width: 90%;
+    height: 90%;
+  }
+ }

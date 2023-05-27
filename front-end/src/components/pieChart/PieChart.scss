@@ -1,4 +1,25 @@
-// .pieChart {
-//     width: 800px;
-//     margin: 50px auto;
-//   }
+.pieChart {
+    width: 800px;
+    margin: 50px auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .pieChart {
+      width: 90%;
+      height: 45%;
+    }
+   }
+  
+   @media screen and (max-width: 468px) {
+    .pieChart {
+      width: 300px;
+      height: 300px;
+    }
+   }
+   
+   @media screen and (max-width: 300px) {
+    .pieChart {
+      width: 90%;
+      height: 90%;
+    }
+   }

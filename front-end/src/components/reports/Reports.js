@@ -24,7 +24,7 @@ const Reports = () => {
         <table>
           <thead>
             <tr>
-              <th>DEPORT ID</th>
+              <th>DEPOSIT ID</th>
               <th>DEPOSIT DATE</th>
               <th>STORE</th>
               <th>DAILY DEPOSIT</th>

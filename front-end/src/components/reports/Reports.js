@@ -21,6 +21,7 @@ const Reports = () => {
   return (
     <div className='reports'>
       <section>
+      <p>*** NB: Click on the Daily Deposit(Amount) to edit Deposit ***</p>
         <table>
           <thead>
             <tr>

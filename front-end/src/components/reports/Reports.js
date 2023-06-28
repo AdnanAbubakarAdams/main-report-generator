@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Report from '../report/Report';
+import Loading from '../loading/Loading';
 
 // CSS
 import "./Reports.scss";
@@ -10,10 +11,17 @@ const API = process.env.REACT_APP_API_URL;
 
 const Reports = () => {
   const [reports, setReports] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`${API}/reports`)
-    .then((response) => setReports(response.data))
+    .then((response) => {
+      setTimeout(() => {
+        setReports(response.data)
+        setLoading(false)
+      }, 1000);
+    })
     .catch((c) => console.warn("catch", c));
   }, []);
 
@@ -38,6 +46,7 @@ const Reports = () => {
             })}
           </tbody> 
         </table>
+        <Loading loading={loading} />
       </section>
     </div>
   )
